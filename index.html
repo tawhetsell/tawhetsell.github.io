@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Travis A. Whetsell</title>
+  <meta
+    name="description"
+    content="Travis A. Whetsell is an assistant professor at Georgia Tech working on public administration, science policy, network analysis, and collaborative governance."
+  >
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("theme");
+        const theme = savedTheme === "light" ? "light" : "dark";
+        document.documentElement.dataset.theme = theme;
+      } catch {
+        document.documentElement.dataset.theme = "dark";
+      }
+    })();
+  </script>
+  <meta name="theme-color" content="#0b0d10">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="site-mark" href="#top" aria-label="Go to top">TAW</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#overview">Overview</a>
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#impact">Impact</a>
+      </nav>
+      <div class="header-actions">
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          role="switch"
+          aria-checked="false"
+          aria-label="Switch to light mode"
+        >
+          <span class="theme-toggle-indicator" aria-hidden="true"></span>
+          <span class="theme-toggle-label" id="theme-toggle-label">Dark</span>
+        </button>
+        <a class="button button-ghost button-small" href="cv_whetsell_2026_03_26.pdf">CV / PDF</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" id="overview">
+        <p class="eyebrow">Atlanta / Public Policy / Network Analysis</p>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">Version 0.1</p>
+            <h1>Travis A. Whetsell</h1>
+            <p class="hero-title">
+              Assistant Professor, Jimmy and Rosalynn Carter School of Public Policy,
+              Georgia Institute of Technology.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="cv_whetsell_2026_03_26.pdf">Open CV</a>
+              <a class="button button-secondary" href="#research">Selected work</a>
+            </div>
+            <div class="bio-summary">
+              <p>
+                Travis Whetsell's research focuses on public sector networks, science and
+                technology policy, and the philosophy of public administration. His work
+                has appeared in leading journals, including Journal of Public Administration
+                Research and Theory, Public Administration Review, Perspectives on Public
+                Management and Governance, Research Policy, and Science and Public Policy.
+                He has conducted funded research supported by the National Science Foundation
+                and the Georgia Department of Transportation.
+              </p>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Current profile">
+            <div class="panel-header">
+              <span class="panel-tag">Current</span>
+              <span class="panel-code">FIG 0.1</span>
+            </div>
+            <div class="portrait-frame">
+              <img
+                class="hero-portrait hero-portrait-dark"
+                src="wireframe_headshot_dark.png"
+                alt="Portrait of Travis A. Whetsell"
+              >
+              <img
+                class="hero-portrait hero-portrait-light"
+                src="wireframe_headshot_light.png"
+                alt="Portrait of Travis A. Whetsell"
+              >
+            </div>
+            <dl class="hero-facts">
+              <div>
+                <dt>Appointment</dt>
+                <dd>Georgia Tech, 2022 to present</dd>
+              </div>
+              <div>
+                <dt>Previous appointments</dt>
+                <dd class="fact-list">
+                  <span>Florida International University, 2017 to 2022</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Education</dt>
+                <dd class="fact-list">
+                  <span>PhD, Public Policy and Management, The Ohio State University</span>
+                  <span>MPA, Public Administration, Texas State University</span>
+                  <span>BA, Political Science, Texas State University</span>
+                </dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+
+        <div class="hero-bands" aria-label="Research areas">
+          <div>
+            <span class="band-label">01</span>
+            <span class="band-text">Public sector networks</span>
+          </div>
+          <div>
+            <span class="band-label">02</span>
+            <span class="band-text">Science and technology policy</span>
+          </div>
+          <div>
+            <span class="band-label">03</span>
+            <span class="band-text">Philosophy of public administration</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell">
+        <div class="section-label">
+          <span>00</span>
+          <p>Elsewhere</p>
+        </div>
+        <div class="section-body section-body-wide">
+          <div class="note-card">
+            <p class="card-code">Profiles</p>
+            <h3>Elsewhere on the web.</h3>
+            <div class="external-links">
+              <a class="external-link" href="https://scholar.google.com/citations?user=A6kiEDkAAAAJ&amp;hl=en&amp;oi=ao">
+                <span class="external-link-label">Google Scholar</span>
+                <span class="external-link-url">scholar.google.com</span>
+              </a>
+              <a class="external-link" href="https://spp.gatech.edu/people/person/ff1b6a02-e3ce-5c80-a7d5-803a3aee25ae">
+                <span class="external-link-label">Georgia Tech Profile</span>
+                <span class="external-link-url">spp.gatech.edu</span>
+              </a>
+              <a class="external-link" href="https://www.researchgate.net/profile/Travis_Whetsell">
+                <span class="external-link-label">ResearchGate</span>
+                <span class="external-link-url">researchgate.net</span>
+              </a>
+              <a class="external-link" href="https://github.com/tawhetsell">
+                <span class="external-link-label">GitHub</span>
+                <span class="external-link-url">github.com/tawhetsell</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell" id="research">
+        <div class="section-label">
+          <span>01</span>
+          <p>Research</p>
+        </div>
+        <div class="section-body">
+          <div class="section-heading">
+            <h2>Networks, Governance, Philosophy.</h2>
+          </div>
+
+          <div class="card-grid">
+            <article class="theme-card">
+              <p class="card-code">Theme 01</p>
+              <h3>Public sector networks</h3>
+              <p>
+                Research on collaborative governance, organizational structure,
+                information search, and network interventions in public administration.
+              </p>
+            </article>
+            <article class="theme-card">
+              <p class="card-code">Theme 02</p>
+              <h3>Science and technology policy</h3>
+              <p>
+                Work on research capacity, scientific performance, academic freedom,
+                and international research collaboration in science systems.
+              </p>
+            </article>
+            <article class="theme-card">
+              <p class="card-code">Theme 03</p>
+              <h3>Philosophy of public administration</h3>
+              <p>
+                Scholarship on pragmatism, theory pluralism, and the conceptual
+                foundations of public administration and the public.
+              </p>
+            </article>
+          </div>
+
+          <div class="list-block">
+            <div class="list-heading">
+              <h3>Selected publications</h3>
+            </div>
+            <ol class="publication-list">
+              <li>
+                <span class="pub-year">2025</span>
+                <div>
+                  <a class="pub-title-link" href="https://doi.org/10.1162/QSS.a.22">
+                    <p class="pub-title">
+                      Academic freedom and international research collaboration: A
+                      longitudinal analysis of global network evolution.
+                    </p>
+                  </a>
+                  <p class="pub-meta">Quantitative Science Studies</p>
+                </div>
+              </li>
+              <li>
+                <span class="pub-year">2025</span>
+                <div>
+                  <a class="pub-title-link" href="https://doi.org/10.1111/puar.70009">
+                    <p class="pub-title">Applied causal inference in public sector networks.</p>
+                  </a>
+                  <p class="pub-meta">Public Administration Review</p>
+                </div>
+              </li>
+              <li>
+                <span class="pub-year">2023</span>
+                <div>
+                  <a class="pub-title-link" href="https://doi.org/10.1093/ppmgov/gvad003">
+                    <p class="pub-title">
+                      Network interventions: Applying network science for pragmatic action
+                      in public administration and policy.
+                    </p>
+                  </a>
+                  <p class="pub-meta">Perspectives on Public Management and Governance</p>
+                </div>
+              </li>
+              <li>
+                <span class="pub-year">2023</span>
+                <div>
+                  <a class="pub-title-link" href="https://doi.org/10.1371/journal.pone.0287058">
+                    <p class="pub-title">
+                      Democratic governance and global science: A longitudinal analysis of
+                      the international research collaboration network.
+                    </p>
+                  </a>
+                  <p class="pub-meta">PLOS ONE</p>
+                </div>
+              </li>
+              <li>
+                <span class="pub-year">2021</span>
+                <div>
+                  <a class="pub-title-link" href="https://doi.org/10.1093/scipol/scab036">
+                    <p class="pub-title">
+                      Democracy, complexity, and science: Exploring structural sources of
+                      national scientific performance.
+                    </p>
+                  </a>
+                  <p class="pub-meta">Science and Public Policy</p>
+                </div>
+              </li>
+              <li>
+                <span class="pub-year">2020</span>
+                <div>
+                  <a class="pub-title-link" href="https://doi.org/10.1093/jopart/muaa002">
+                    <p class="pub-title">
+                      Government as network catalyst: Accelerating self-organization in a
+                      strategic industry.
+                    </p>
+                  </a>
+                  <p class="pub-meta">Journal of Public Administration Research and Theory</p>
+                </div>
+              </li>
+              <li>
+                <span class="pub-year">2024</span>
+                <div>
+                  <a class="pub-title-link" href="https://doi.org/10.1093/ppmgov/gvad011">
+                    <p class="pub-title">
+                      What Is The Public? A pragmatic analysis of a core concept in public administration.
+                    </p>
+                  </a>
+                  <p class="pub-meta">Perspectives on Public Management and Governance</p>
+                </div>
+              </li>
+              <li>
+                <span class="pub-year">2021</span>
+                <div>
+                  <a class="pub-title-link" href="https://doi.org/10.1093/jopart/muab003">
+                    <p class="pub-title">
+                      Formal hierarchies and informal networks: How organizational structure
+                      shapes information search in local government.
+                    </p>
+                  </a>
+                  <p class="pub-meta">Journal of Public Administration Research and Theory</p>
+                </div>
+              </li>
+              <li>
+                <span class="pub-year">2020</span>
+                <div>
+                  <a class="pub-title-link" href="https://doi.org/10.1093/scipol/scz048">
+                    <p class="pub-title">
+                      Between promise and performance: Science and technology policy
+                      implementation through network governance.
+                    </p>
+                  </a>
+                  <p class="pub-meta">Science and Public Policy</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell" id="teaching">
+        <div class="section-label">
+          <span>02</span>
+          <p>Teaching</p>
+        </div>
+        <div class="section-body">
+          <div class="section-heading">
+            <h2>Teaching that integrates theory and analysis.</h2>
+          </div>
+
+          <div class="split-grid">
+            <div class="surface-card">
+              <p class="card-code">Georgia Tech</p>
+              <ul class="plain-list">
+                <li>PUBP 3030 / 6201, Policy Analysis</li>
+                <li>PUBP 6017, Public Management</li>
+                <li>PUBP 4010 / 4020, Undergraduate Task Force</li>
+                <li>PUBP 8803, Special Topics in Network Governance</li>
+              </ul>
+            </div>
+            <div class="surface-card">
+              <p class="card-code">Florida International University</p>
+              <ul class="plain-list">
+                <li>PAD 4432, Administrative Leadership and Behavior</li>
+                <li>PAD 3034, Policy Development and Implementation</li>
+                <li>PAD 4934, Integrative Seminar in Public Policy and Service</li>
+                <li>PAD 7703, Empirical Methods in Public Administration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell" id="impact">
+        <div class="section-label">
+          <span>03</span>
+          <p>Impact</p>
+        </div>
+        <div class="section-body">
+          <div class="section-heading">
+            <h2>Research with Reach.</h2>
+          </div>
+
+          <div class="metrics-panel" aria-label="Google Scholar metrics">
+            <div class="metrics-head">
+              <div>
+                <p class="card-code">Scholar snapshot</p>
+                <h3>Google Scholar, as of <span data-metric="as_of">April 3, 2026</span>.</h3>
+              </div>
+              <a
+                class="button button-ghost button-small"
+                href="https://scholar.google.com/citations?user=A6kiEDkAAAAJ&amp;hl=en&amp;oi=ao"
+              >
+                View profile
+              </a>
+            </div>
+            <div class="metrics-grid">
+              <article class="metric-card">
+                <p class="metric-label">Citations</p>
+                <p class="metric-value" data-metric="citations">1,443</p>
+              </article>
+              <article class="metric-card">
+                <p class="metric-label">h-index</p>
+                <p class="metric-value" data-metric="h_index">18</p>
+              </article>
+              <article class="metric-card">
+                <p class="metric-label">i10-index</p>
+                <p class="metric-value" data-metric="i10_index">21</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="impact-list">
+            <article class="impact-item">
+              <span class="impact-year">2025</span>
+              <div>
+                <h3>
+                  <a class="impact-link" href="https://theconversation.com/research-breakthroughs-often-come-through-collaborations-attacks-on-academic-freedom-threaten-this-vital-work-266644">
+                    The Conversation
+                  </a>
+                </h3>
+                <p>
+                  Public-facing piece on research collaboration and academic freedom.
+                </p>
+              </div>
+            </article>
+            <article class="impact-item">
+              <span class="impact-year">2023</span>
+              <div>
+                <h3>
+                  <a class="impact-link" href="https://www.axios.com/2023/09/28/us-india-science-collaboration-counter-china">
+                    Axios
+                  </a>
+                </h3>
+                <p>
+                  Coverage of U.S.-India science ties that referenced the national
+                  research capacity work.
+                </p>
+              </div>
+            </article>
+            <article class="impact-item">
+              <span class="impact-year">2022</span>
+              <div>
+                <h3>
+                  <a class="impact-link" href="https://www.europarl.europa.eu/RegData/etudes/BRIE/2022/733550/EPRS_BRI(2022)733550_EN.pdf">
+                    European Parliamentary Research Service
+                  </a>
+                </h3>
+                <p>
+                  European Parliament briefing linking to the international research
+                  collaboration work.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell">
+        <div class="section-label">
+          <span>04</span>
+          <p>Acknowledgements</p>
+        </div>
+        <div class="section-body section-body-wide">
+          <div class="note-card">
+            <p class="card-code">Build note</p>
+            <p class="note-card-text">Chat GPT 5.4 Extra High via Codex was used to build this webpage.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Travis A. Whetsell</p>
+      <p>GitHub Pages build in progress with dark and light modes.</p>
+    </footer>
+  </div>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const toggle = document.getElementById("theme-toggle");
+      const toggleLabel = document.getElementById("theme-toggle-label");
+      const themeColor = document.querySelector('meta[name="theme-color"]');
+      const themeColors = {
+        dark: "#0b0d10",
+        light: "#ece8e1"
+      };
+
+      function getTheme() {
+        return root.dataset.theme === "light" ? "light" : "dark";
+      }
+
+      function applyTheme(theme) {
+        root.dataset.theme = theme;
+
+        if (toggle) {
+          const isLight = theme === "light";
+          toggle.setAttribute("aria-checked", String(isLight));
+          toggle.setAttribute(
+            "aria-label",
+            isLight ? "Switch to dark mode" : "Switch to light mode"
+          );
+        }
+
+        if (toggleLabel) {
+          toggleLabel.textContent = theme === "light" ? "Light" : "Dark";
+        }
+
+        if (themeColor) {
+          themeColor.setAttribute("content", themeColors[theme]);
+        }
+      }
+
+      function formatMetric(value) {
+        return typeof value === "number"
+          ? new Intl.NumberFormat("en-US").format(value)
+          : value;
+      }
+
+      async function loadScholarMetrics() {
+        try {
+          const response = await fetch("scholar-metrics.json", { cache: "no-store" });
+
+          if (!response.ok) {
+            return;
+          }
+
+          const data = await response.json();
+          const metrics = {
+            as_of: data.as_of,
+            citations: data.metrics?.citations,
+            h_index: data.metrics?.h_index,
+            i10_index: data.metrics?.i10_index
+          };
+
+          Object.entries(metrics).forEach(([key, value]) => {
+            if (value === undefined || value === null) {
+              return;
+            }
+
+            document.querySelectorAll(`[data-metric="${key}"]`).forEach((element) => {
+              element.textContent = formatMetric(value);
+            });
+          });
+        } catch {
+          // Keep the embedded fallback values when the JSON is unavailable.
+        }
+      }
+
+      applyTheme(getTheme());
+      loadScholarMetrics();
+
+      toggle?.addEventListener("click", () => {
+        const nextTheme = getTheme() === "dark" ? "light" : "dark";
+        applyTheme(nextTheme);
+
+        try {
+          localStorage.setItem("theme", nextTheme);
+        } catch {
+          // Ignore storage failures and keep the in-memory theme.
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
