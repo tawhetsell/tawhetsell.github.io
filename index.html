@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,14 +12,14 @@
     (() => {
       try {
         const savedTheme = localStorage.getItem("theme");
-        const theme = savedTheme === "light" ? "light" : "dark";
+        const theme = savedTheme === "dark" ? "dark" : "light";
         document.documentElement.dataset.theme = theme;
       } catch {
-        document.documentElement.dataset.theme = "dark";
+        document.documentElement.dataset.theme = "light";
       }
     })();
   </script>
-  <meta name="theme-color" content="#0b0d10">
+  <meta name="theme-color" content="#ece8e1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -44,11 +44,11 @@
           id="theme-toggle"
           type="button"
           role="switch"
-          aria-checked="false"
-          aria-label="Switch to light mode"
+          aria-checked="true"
+          aria-label="Switch to dark mode"
         >
           <span class="theme-toggle-indicator" aria-hidden="true"></span>
-          <span class="theme-toggle-label" id="theme-toggle-label">Dark</span>
+          <span class="theme-toggle-label" id="theme-toggle-label">Light</span>
         </button>
         <a class="button button-ghost button-small" href="cv_whetsell_2026_03_26.pdf">CV / PDF</a>
       </div>
