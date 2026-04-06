@@ -476,13 +476,30 @@ html[data-theme="light"] .hero-portrait-dark {
   font-size: 1rem;
 }
 
-.fact-list {
-  display: grid;
-  gap: 0.28rem;
+.fact-bullets {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--fg-default);
 }
 
-.fact-list span {
+.fact-bullets li + li {
+  margin-top: 0.55rem;
+}
+
+.fact-degrees li + li {
+  margin-top: 0.8rem;
+}
+
+.degree-name,
+.degree-institution {
   display: block;
+}
+
+.degree-institution {
+  margin-top: 0.12rem;
+  padding-left: 0.75rem;
+  color: var(--fg-muted);
+  font-size: 0.96rem;
 }
 
 .hero-bands {
