@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV — Travis A. Whetsell</title>
+  <meta
+    name="description"
+    content="Curriculum vitae of Travis A. Whetsell, Assistant Professor at the Carter School of Public Policy, Georgia Institute of Technology."
+  >
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("theme");
+        const theme = savedTheme === "dark" ? "dark" : "light";
+        document.documentElement.dataset.theme = theme;
+      } catch {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
+  <meta name="theme-color" content="#ece8e1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="site-mark" href="../index.html#top" aria-label="Go to home">TAW</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html">Overview</a>
+        <a href="../blog/">Blog</a>
+        <a href="./" aria-current="page">CV</a>
+      </nav>
+      <div class="header-actions">
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          role="switch"
+          aria-checked="true"
+          aria-label="Switch to dark mode"
+        >
+          <span class="theme-toggle-indicator" aria-hidden="true"></span>
+          <span class="theme-toggle-label" id="theme-toggle-label">Light</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="cv-main" id="top">
+      <div class="cv-head">
+        <h1>Curriculum Vitae</h1>
+        <a class="button button-ghost button-small" href="../cv_whetsell_2026_03_26.pdf" target="_blank" rel="noopener">Open PDF</a>
+      </div>
+
+      <iframe
+        class="cv-frame"
+        src="../cv_whetsell_2026_03_26.pdf#view=FitH"
+        title="Curriculum Vitae of Travis A. Whetsell (PDF)"
+        loading="lazy"
+      ></iframe>
+      <p class="cv-fallback">
+        If the CV does not display above,
+        <a href="../cv_whetsell_2026_03_26.pdf" target="_blank" rel="noopener">open the PDF in a new tab</a>.
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <p>Travis A. Whetsell</p>
+      <p><a href="../index.html#top">Back to home</a></p>
+    </footer>
+  </div>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const toggle = document.getElementById("theme-toggle");
+      const toggleLabel = document.getElementById("theme-toggle-label");
+      const themeColor = document.querySelector('meta[name="theme-color"]');
+      const themeColors = {
+        dark: "#0b0d10",
+        light: "#ece8e1"
+      };
+
+      function getTheme() {
+        return root.dataset.theme === "light" ? "light" : "dark";
+      }
+
+      function applyTheme(theme) {
+        root.dataset.theme = theme;
+
+        if (toggle) {
+          const isLight = theme === "light";
+          toggle.setAttribute("aria-checked", String(isLight));
+          toggle.setAttribute(
+            "aria-label",
+            isLight ? "Switch to dark mode" : "Switch to light mode"
+          );
+        }
+
+        if (toggleLabel) {
+          toggleLabel.textContent = theme === "light" ? "Light" : "Dark";
+        }
+
+        if (themeColor) {
+          themeColor.setAttribute("content", themeColors[theme]);
+        }
+      }
+
+      applyTheme(getTheme());
+
+      toggle?.addEventListener("click", () => {
+        const nextTheme = getTheme() === "dark" ? "light" : "dark";
+        applyTheme(nextTheme);
+
+        try {
+          localStorage.setItem("theme", nextTheme);
+        } catch {
+          // Ignore storage failures and keep the in-memory theme.
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

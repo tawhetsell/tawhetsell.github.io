@@ -191,6 +191,11 @@ button:focus-visible {
   color: var(--fg-default);
 }
 
+/* The active page in the top nav. */
+.site-nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
 .header-actions {
   display: flex;
   align-items: center;
@@ -833,6 +838,282 @@ h2 {
   font-size: 0.92rem;
 }
 
+/* CV page */
+.cv-main {
+  padding-top: 1rem;
+}
+
+.cv-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem 0 1.2rem;
+  margin-bottom: 1.4rem;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.cv-head h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: -0.04em;
+}
+
+.cv-frame {
+  width: 100%;
+  height: calc(100vh - 230px);
+  min-height: 560px;
+  border: 1px solid var(--border-default);
+  border-radius: 1rem;
+  /* The CV PDF has a white page; keep it framed cleanly in dark mode too. */
+  background: #fff;
+}
+
+.cv-fallback {
+  margin: 0.85rem 0 0;
+  color: var(--fg-subtle);
+  font-size: 0.9rem;
+}
+
+.cv-fallback a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+/* Blog */
+.blog-main {
+  padding-top: 1rem;
+}
+
+.blog-intro {
+  display: grid;
+  gap: 0.9rem;
+  padding: 2.5rem 0 1.5rem;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.blog-intro h1 {
+  max-width: 18ch;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+.blog-intro p {
+  margin: 0;
+  max-width: var(--content-width);
+  color: var(--fg-muted);
+  font-size: 1.04rem;
+}
+
+.post-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+
+.post-list-item {
+  border-bottom: 1px solid var(--border-default);
+}
+
+.post-link {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.5rem 0;
+  transition: opacity 160ms ease;
+}
+
+.post-link:hover {
+  opacity: 0.78;
+}
+
+.post-date {
+  color: var(--fg-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.post-list-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.post-list-item:hover .post-list-title {
+  color: var(--accent);
+}
+
+.post-excerpt {
+  margin: 0.6rem 0 0;
+  color: var(--fg-muted);
+  font-size: 0.98rem;
+}
+
+.post-tag {
+  margin-top: 0.55rem;
+  color: var(--fg-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Single post */
+.article {
+  width: min(100%, var(--content-width));
+  margin: 0 auto;
+  padding: 2.5rem 0 1rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+  color: var(--fg-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.back-link:hover {
+  color: var(--fg-default);
+}
+
+.article-header {
+  display: grid;
+  gap: 0.9rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  color: var(--fg-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.article-header h1 {
+  max-width: 24ch;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+}
+
+.article-subtitle {
+  margin: 0;
+  max-width: 40ch;
+  color: var(--fg-muted);
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+}
+
+.prose {
+  color: var(--fg-default);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.prose > * + * {
+  margin-top: 1.3rem;
+}
+
+.prose h2 {
+  margin-top: 2.6rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.prose h3 {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+}
+
+.prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+.prose a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.4rem;
+}
+
+.prose li + li {
+  margin-top: 0.5rem;
+}
+
+.post-figure {
+  margin: 2.2rem 0;
+}
+
+.post-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border-default);
+  border-radius: 0.9rem;
+  /* The plots have white backgrounds; keep them legible in dark mode too. */
+  background: #fff;
+}
+
+.post-figure figcaption {
+  margin-top: 0.7rem;
+  color: var(--fg-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+}
+
+.post-figure figcaption a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.prose blockquote {
+  margin: 1.6rem 0;
+  padding: 0.4rem 0 0.4rem 1.3rem;
+  border-left: 2px solid var(--border-strong);
+  color: var(--fg-muted);
+  font-style: italic;
+}
+
+.prose hr {
+  margin: 2.4rem 0;
+  border: 0;
+  border-top: 1px solid var(--border-default);
+}
+
+.article-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-default);
+  color: var(--fg-muted);
+  font-size: 0.96rem;
+}
+
+.article-footer a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 @media (max-width: 980px) {
   .hero-grid,
   .card-grid,
@@ -851,10 +1132,15 @@ h2 {
   .impact-item,
   .publication-list li,
   .site-footer,
-  .cta-panel {
+  .cta-panel,
+  .post-link {
     grid-template-columns: 1fr;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .post-link {
+    gap: 0.4rem;
   }
 
   .impact-item {
