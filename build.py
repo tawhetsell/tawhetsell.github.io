@@ -80,6 +80,9 @@ def parse_front_matter(text):
 # Inline Markdown -> HTML
 # ---------------------------------------------------------------------------
 
+_FOOTNOTES = {}  # label -> footnote number, set per post in render_body()
+_FOOTNOTE_SEEN = set()  # labels already referenced (so only the first gets the anchor id)
+
 def render_inline(text):
     """Convert inline Markdown (code, links, autolinks, bold, italic) to HTML."""
     # Pull out inline code spans first so their contents are not formatted.
@@ -109,6 +112,26 @@ def render_inline(text):
     # **bold** then *italic*
     text = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", text)
     text = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", text)
+
+    # [^label] footnote references -> superscript links
+    if _FOOTNOTES:
+        def fn_ref(m):
+            label = m.group(1)
+            num = _FOOTNOTES.get(label)
+            if not num:
+                return m.group(0)
+            # Only the first reference to a footnote carries the id its back-link targets.
+            if label in _FOOTNOTE_SEEN:
+                id_attr = ""
+            else:
+                _FOOTNOTE_SEEN.add(label)
+                id_attr = f' id="fnref-{num}"'
+            return (
+                f'<sup class="footnote-ref"{id_attr}>'
+                f'<a href="#fn-{num}">{num}</a></sup>'
+            )
+
+        text = re.sub(r"\[\^([\w-]+)\]", fn_ref, text)
 
     # Restore inline code with escaped contents.
     def restore_code(m):
@@ -141,6 +164,26 @@ def is_block_start(line):
     )
 
 def render_body(body):
+    global _FOOTNOTES, _FOOTNOTE_SEEN
+    _FOOTNOTE_SEEN = set()
+    # Pull out footnote definitions ("[^label]: citation text") and number the
+    # references by order of first appearance in the body.
+    defs = {}
+    kept = []
+    for line in body.split("\n"):
+        m = re.match(r"^\[\^([\w-]+)\]:\s+(.*)$", line)
+        if m:
+            defs[m.group(1)] = m.group(2).strip()
+        else:
+            kept.append(line)
+    body = "\n".join(kept)
+    order = []
+    for m in re.finditer(r"\[\^([\w-]+)\]", body):
+        lbl = m.group(1)
+        if lbl in defs and lbl not in order:
+            order.append(lbl)
+    _FOOTNOTES = {lbl: idx + 1 for idx, lbl in enumerate(order)}
+
     lines = body.split("\n")
     out = []
     i = 0
@@ -230,7 +273,23 @@ def render_body(body):
             i += 1
         out.append(f"<p>{render_inline(' '.join(para))}</p>")
 
-    return "\n\n          ".join(out)
+    body_html = "\n\n          ".join(out)
+
+    # Render the footnotes section (numbered, in order of appearance).
+    if order:
+        items = []
+        for lbl in order:
+            num = _FOOTNOTES[lbl]
+            items.append(
+                f'  <li id="fn-{num}">{render_inline(defs[lbl])} '
+                f'<a class="footnote-back" href="#fnref-{num}" aria-label="Back to text">&#8617;</a></li>'
+            )
+        body_html += (
+            '\n\n          <hr class="footnotes-sep">\n'
+            '          <ol class="footnotes">\n' + "\n".join(items) + "\n          </ol>"
+        )
+
+    return body_html
 
 # ---------------------------------------------------------------------------
 # Page templates
